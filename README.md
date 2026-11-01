@@ -52,7 +52,7 @@ The Logistic Regression model was also evaluated at thresholds of 0.3, 0.4, 0.5,
 A threshold of 0.5 achieved the highest F1 score in this comparison. Lower thresholds increased recall while reducing precision.
 
 ## Project Files
-- `02_Customer_Churn_Prediction.ipynb` — Complete project notebook.
+-  Customer_Churn_Prediction.ipynb` — Complete project notebook.
 - `customer_churn_model.pkl` — Saved trained model and classification threshold (if uploaded).
 - `requirements.txt` — Required Python libraries.
 
