@@ -1,53 +1,73 @@
-# Customer Churn Prediction Using Machine Learning
+# Customer Churn Prediction
 
 ## Project Overview
-This project predicts whether a telecommunications customer is likely to leave the company using Machine Learning classification algorithms.
+This project uses machine learning to predict whether a telecommunications customer is likely to leave the service (customer churn).
+
+The goal is to identify customers at risk of leaving so that businesses can take proactive retention measures.
 
 ## Dataset
-IBM Telco Customer Churn Dataset
-
-- 7,043 customer records
-- 20 input features after removing customerID
-- Target variable: Churn
+- **Dataset:** IBM Telco Customer Churn
+- **Records:** 7,043 customers
+- **Target variable:** `Churn`
+- **Source:** [IBM Telco Customer Churn Dataset](https://raw.githubusercontent.com/IBM/telco-customer-churn-on-icp4d/master/data/Telco-Customer-Churn.csv)
 
 ## Technologies Used
 - Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
+- Pandas and NumPy
+- Matplotlib and Seaborn
 - Scikit-learn
 - Joblib
-
-## Machine Learning Algorithms
-1. Logistic Regression
-2. Random Forest Classifier
-3. Tuned Random Forest Classifier
+- Google Colab
 
 ## Project Workflow
-1. Dataset Collection
-2. Data Cleaning
-3. Exploratory Data Analysis
-4. Feature Engineering
-5. Data Preprocessing
-6. Train-Test Split
-7. Model Training
-8. Hyperparameter Tuning
-9. Model Evaluation
-10. Customer Churn Prediction
+1. Data loading and exploration
+2. Data cleaning and preprocessing
+3. Exploratory Data Analysis (EDA)
+4. Feature encoding and scaling
+5. Train-test split with stratification
+6. Model training
+7. Model evaluation
+8. Hyperparameter tuning using GridSearchCV
+9. Classification threshold comparison
+10. Model saving and sample prediction
 
-## Evaluation Metrics
-- Accuracy
-- Precision
-- Recall
-- F1-score
-- ROC-AUC
+## Machine Learning Models
+- Logistic Regression
+- Random Forest Classifier
+- Tuned Random Forest Classifier
+
+## Model Performance
+
+| Model | Accuracy | Precision | Recall | F1 Score | ROC-AUC |
+|---|---:|---:|---:|---:|---:|
+| Logistic Regression | 0.7381 | 0.5043 | 0.7834 | 0.6136 | 0.8413 |
+| Random Forest | 0.7842 | 0.6224 | 0.4759 | 0.5394 | 0.8223 |
+| Tuned Random Forest | 0.7395 | 0.5061 | 0.7781 | 0.6133 | 0.8398 |
+
+Logistic Regression achieved the highest recall, F1 score, and ROC-AUC among the three evaluated models. Random Forest achieved the highest accuracy and precision.
+
+## Classification Threshold
+The Logistic Regression model was also evaluated at thresholds of 0.3, 0.4, 0.5, and 0.6.
+
+A threshold of 0.5 achieved the highest F1 score in this comparison. Lower thresholds increased recall while reducing precision.
+
+## Project Files
+- `02_Customer_Churn_Prediction.ipynb` — Complete project notebook.
+- `customer_churn_model.pkl` — Saved trained model and classification threshold (if uploaded).
+- `requirements.txt` — Required Python libraries.
 
 ## How to Run
-1. Open the notebook using Google Colab.
-2. Run the notebook cells sequentially.
-3. The dataset is loaded automatically from the public IBM dataset URL.
+1. Open the notebook in Google Colab.
+2. Run the cells from top to bottom.
+3. The dataset is loaded directly from its source URL.
+4. Review the model evaluation and sample prediction.
+
+## Future Improvements
+- Test additional classification algorithms.
+- Perform more systematic hyperparameter tuning.
+- Evaluate threshold selection using validation data.
+- Deploy the model using a web application.
 
 ## Author
 Akhil A V
-Integrated MSc Computer Science (AI & ML)
+MSc Computer Science (AI & ML)
